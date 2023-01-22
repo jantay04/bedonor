@@ -6,14 +6,13 @@ import TelegaSvg from "./assets/VectorTelega.svg";
 import InstaSvg from "./assets/Instagram.svg";
 import VkSvg from "./assets/LogoVk.svg";
 import InfoSvg from "./assets/Info.svg";
-import { Link, NavLink } from "react-router-dom";
 
 type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="bg-ourBlue flex  font-ourFont min-w-max h-footerHeight text-footerBlueText  leading-8 text-l font-semibold not-italic">
-      <div className="flex w-10/12  min-w-max justify-between ml-24 mt-14">
+    <div className="bg-ourBlue flex   font-ourFon h-footerHeight  text-footerBlueText  leading-8 text-l font-semibold not-italic ">
+      <div className="flex  container mx-auto justify-around px-4  mt-14  ">
         <div>
           <img src={BeDonorSvg} />
           <div className="flex">
