@@ -8,7 +8,9 @@ module.exports = {
       ourredanim: "#CA3338",
       footerBlueText: "#2A5573",
       mapRed: "#AB3D51",
+      mapblue: "#D1E5F2",
     },
+
     extend: {},
     width: {
       vsm: "50vmax",
@@ -40,13 +42,13 @@ module.exports = {
       // },
       bounce: {
         "0%, 100%": {
-          transform: " none",
-          transtion: "0.5s",
+          transform: "translateY(-1%)",
+          transtion: "3s",
         },
-        "43% ": {
-          transform: "translateY(-5%)",
-          transtion: "0.5s",
-        },
+        // "40% ": {
+        //   transform: "translateY(-0.5%)",
+        //   transtion: "4s",
+        // },
       },
       transitionDelay: {
         tr: "1s",
