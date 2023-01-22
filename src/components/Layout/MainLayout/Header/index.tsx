@@ -24,7 +24,7 @@ function Header({}: Props) {
           <button className="hover:text-ourred focus:text-ourred">FAQ</button>
         </ul>
       </div>
-      <button className="w-btn h-btn text-ourred font-semibold rounded-btn  outline outline-offset-0 outline-ourred">
+      <button className="hover:animate-bounce  w-btn h-btn text-ourred font-semibold rounded-btn  outline outline-offset-0 outline-ourred">
         Войти
       </button>
     </div>

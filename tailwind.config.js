@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       ourblue: "#2A5573",
       ourred: "#C53A3F",
+      ourredanim: "#CA3338",
       footerBlueText: "#2A5573",
     },
     extend: {},
@@ -28,6 +29,24 @@ module.exports = {
     },
     backgroundColor: {
       ourBlue: " #D1E5F2",
+    },
+    keyframes: {
+      // pulse: {
+      //   "0%, 100%": { color: "C53A3F" },
+      //   "20%": {
+      //     color: "#DF2126",
+      //   },
+      // },
+      bounce: {
+        "0%, 100%": {
+          transform: " none",
+          transtion: "0.5s",
+        },
+        "43% ": {
+          transform: "translateY(-5%)",
+          transtion: "0.5s",
+        },
+      },
     },
   },
   plugins: [],
