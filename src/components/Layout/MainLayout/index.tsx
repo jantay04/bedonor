@@ -1,10 +1,11 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import { BrowserRouter } from "react-router-dom";
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 function MainLayout({ children }: Props) {
   return (
@@ -13,7 +14,7 @@ function MainLayout({ children }: Props) {
       {children}
       <Footer />
     </>
-  )
+  );
 }
 
-export default MainLayout
+export default MainLayout;

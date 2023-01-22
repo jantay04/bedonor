@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       ourblue: "#2A5573",
       ourred: "#C53A3F",
+      footerBlueText: "#2A5573",
     },
     extend: {},
     width: {
@@ -14,12 +15,19 @@ module.exports = {
     },
     height: {
       btn: "3vmax",
+      footerHeight: "300px",
     },
     outlineWidth: {
       16: "16px",
     },
     borderRadius: {
       btn: "14px",
+    },
+    fontFamily: {
+      ourFont: " 'Manrope'",
+    },
+    backgroundColor: {
+      ourBlue: " #D1E5F2",
     },
   },
   plugins: [],
