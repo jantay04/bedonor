@@ -7,6 +7,7 @@ module.exports = {
       ourred: "#C53A3F",
       ourredanim: "#CA3338",
       footerBlueText: "#2A5573",
+      mapRed: "#AB3D51",
     },
     extend: {},
     width: {
@@ -45,6 +46,30 @@ module.exports = {
         "43% ": {
           transform: "translateY(-5%)",
           transtion: "0.5s",
+        },
+      },
+      transitionDelay: {
+        tr: "1s",
+      },
+      spacing: {
+        "96px": "107px",
+        leftSpacing: "105px",
+        rightSpacing: "401px",
+        BottomSpacing: "424px",
+        LeftIKSpacing: "243px",
+        REDTalasSpacing: "27.5px",
+        REDOshAndBatkenDivSpacing: "230px",
+        REDOshAndBatkenDivSpacingBottom: "40px",
+        RedrightSpacing: "300px",
+        RedRightSpacingMain: "1135px",
+      },
+      container: {
+        padding: {
+          DEFAULT: "1240px",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
         },
       },
     },
