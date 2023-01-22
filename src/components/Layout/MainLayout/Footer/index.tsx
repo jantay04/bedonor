@@ -11,7 +11,7 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="bg-ourBlue flex   font-ourFon h-footerHeight  text-footerBlueText  leading-8 text-l font-semibold not-italic ">
+    <div className="bg-ourBlue flex   font-ourFon h-footerHeight  text-footerBlueText  leading-8 text-l font-semibold not-italic mt-36 ">
       <div className="flex  container mx-auto justify-around px-4  mt-14  ">
         <div>
           <img src={BeDonorSvg} />
