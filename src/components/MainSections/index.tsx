@@ -1,7 +1,7 @@
-// import Button from '@mui/material/Button/Button'
-// import Checkbox from '@mui/material/Checkbox/Checkbox'
+import Button from '@mui/material/Button/Button'
+import Checkbox from '@mui/material/Checkbox/Checkbox'
 import React from 'react'
-// import pic1 from './assets/pic1.svg'
+import pic1 from './assets/pic1.svg'
 
 type Props = {}
 
@@ -15,10 +15,10 @@ function MainSections({ }: Props) {
                         в крови или ее компонентах для лечения или операций.
                         Вы можете быть тем, кто спасет их жизнь.
                         Присоединяйтесь к нам сегодня!</p>
-                    {/* <Button  variant="contained" color="secondary" size="large" sx={{ textTransform: "none", marginTop:'36px', borderRadius: '16px', fontSize: '14px', padding: '16px 40px' }}>Стать донором</Button> */}
+                    <Button variant="contained" color="secondary" size="large" sx={{ textTransform: "none", marginTop: '36px', borderRadius: '16px', fontSize: '14px', padding: '16px 40px' }}>Стать донором</Button>
                 </div>
                 <div className='col-span-5 max-lg:col-span-12 max-lg:order-first flex justify-center items-center '>
-                    {/* <img src={pic1} className='w-full' alt="graphic" /> */}
+                    <img src={pic1} className='w-full' alt="graphic" />
                 </div>
             </div>
         </div>

@@ -1,13 +1,25 @@
 import React from "react";
-import MainLayout from "./components/Layout/MainLayout";
-import MainRoutes from "./MainRoutes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import HomePage from "./pages/HomePage";
+import NewsPage from "./pages/NewsPage";
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: "#C53A3F",
+      contrastText: "#fff",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <MainRoutes />
-    </div>
+    <ThemeProvider theme={theme}>
+      <NewsPage/>
+    </ThemeProvider>
   );
 }
 
 export default App;
+
