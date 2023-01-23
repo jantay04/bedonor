@@ -17,7 +17,12 @@ function App() {
   //Map пока как комонент идет , потом в main добавил, это для удобста:)
   return (
     <ThemeProvider theme={theme}>
-      <NewsPage/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/news" element={<NewsPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
