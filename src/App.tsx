@@ -14,6 +14,7 @@ const theme = createTheme({
 });
 
 function App() {
+  //Map пока как комонент идет , потом в main добавил, это для удобста:)
   return (
     <ThemeProvider theme={theme}>
       <NewsPage/>
