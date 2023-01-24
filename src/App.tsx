@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const theme = createTheme({
   palette: {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

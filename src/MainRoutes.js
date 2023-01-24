@@ -9,6 +9,11 @@ const MainRoutes = () => {
       element: <HomePage />,
       id: 1,
     },
+    {
+      link: "/aboutus",
+      element: <AboutUsPage />,
+      id: 1,
+    },
   ];
 
   return (
