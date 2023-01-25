@@ -12,6 +12,10 @@ module.exports = {
       },
       height: {
         footerHeight: "300px",
+        mapHeight: "528px",
+      },
+      width: {
+        mapWidth: "796px",
       },
       fontFamily: {
         ourFont: " 'Manrope'",
@@ -39,6 +43,15 @@ module.exports = {
           xl: "5rem",
           "2xl": "6rem",
         },
+      },
+      lineHeight: {
+        "44px": "44px",
+      },
+      letterSpacing: {
+        "0.15px": "0.15px",
+      },
+      borderColor: {
+        borderColor: "rgba(42, 85, 115, 0.5)",
       },
     },
   },

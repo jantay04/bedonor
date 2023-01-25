@@ -1,0 +1,20 @@
+@import url("~leaflet/dist/leaflet.css");
+
+.select-wrapper select {
+  -webkit-appearance: none;
+  padding: 8px 30px 8px 8px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper svg {
+  width: 13.33px;
+  height: 6.67px;
+  position: absolute;
+  right: 19px;
+  top: 29.33px;
+  transition: 0.5s;
+}

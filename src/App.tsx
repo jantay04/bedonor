@@ -1,15 +1,14 @@
 import React from "react";
 import MainLayout from "./components/Layout/MainLayout";
-import Map from "./components/Layout/MainLayout/KgMapPart/Map";
 import Footer from "./components/Layout/MainLayout/Footer";
+import BaseMap from "./components/Layout/MainLayout/Map/BaseMap";
 
 function App() {
   //Map пока как комонент идет , потом в main добавил, это для удобста:)
   return (
     <div className="App">
       <MainLayout>
-        {/* <Footer /> */}
-        <Map />
+        <BaseMap />
       </MainLayout>
     </div>
   );
