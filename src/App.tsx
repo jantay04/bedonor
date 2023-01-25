@@ -4,6 +4,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import QuestionsPage from "./pages/QuestionsPage";
+import Side from "./components/Profile/ProfileSideBar"
 
 const theme = createTheme({
   palette: {
@@ -23,6 +25,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/questions" element={<QuestionsPage/>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

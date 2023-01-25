@@ -12,7 +12,17 @@ const MainRoutes = () => {
     {
       link: "/aboutus",
       element: <AboutUsPage />,
-      id: 1,
+      id: 2,
+    },
+    {
+      link: "/questions",
+      element: <QuestionsPage />,
+      id: 3,
+    },
+    {
+      link: "/side",
+      element: <Side/>,
+      id: 3,
     },
   ];
 
