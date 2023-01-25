@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: "1240px",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
+    },
     colors: {
       ourblue: "#2A5573",
       ourred: "#C53A3F",
@@ -33,23 +42,13 @@ module.exports = {
     backgroundColor: {
       ourBlue: " #D1E5F2",
     },
-    keyframes: {
-      // pulse: {
-      //   "0%, 100%": { color: "C53A3F" },
-      //   "20%": {
-      //     color: "#DF2126",
-      //   },
-      // },
-      bounce: {
-        "0%, 100%": {
-          transform: "translateY(-1%)",
-          transtion: "3s",
-        },
-        // "40% ": {
-        //   transform: "translateY(-0.5%)",
-        //   transtion: "4s",
-        // },
+
+    bounce: {
+      "0%, 100%": {
+        transform: "translateY(-1%)",
+        transtion: "3s",
       },
+
       transitionDelay: {
         tr: "1s",
       },
@@ -64,15 +63,6 @@ module.exports = {
         REDOshAndBatkenDivSpacingBottom: "40px",
         RedrightSpacing: "300px",
         RedRightSpacingMain: "1135px",
-      },
-      container: {
-        padding: {
-          DEFAULT: "1240px",
-          sm: "2rem",
-          lg: "4rem",
-          xl: "5rem",
-          "2xl": "6rem",
-        },
       },
     },
   },
