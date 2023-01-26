@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import QuestionsPage from "./pages/QuestionsPage";
-import Side from "./components/Profile/ProfileSideBar"
+import HealthPage from "./pages/HealthPage";
 
 const theme = createTheme({
   palette: {
@@ -26,6 +26,7 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/questions" element={<QuestionsPage/>} />
+          <Route path="/health" element={<HealthPage/>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
