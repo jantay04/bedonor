@@ -1,6 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import QuestionsPage from "./pages/QuestionsPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import HealthPage from "./pages/HealthPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -8,6 +11,21 @@ const MainRoutes = () => {
       link: "/",
       element: <HomePage />,
       id: 1,
+    },
+    {
+      link: "/aboutus",
+      element: <AboutUsPage />,
+      id: 2,
+    },
+    {
+      link: "/questions",
+      element: <QuestionsPage />,
+      id: 3,
+    },
+    {
+      link: "/health",
+      element: <HealthPage/>,
+      id: 3,
     },
   ];
 

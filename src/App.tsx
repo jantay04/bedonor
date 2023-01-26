@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import QuestionsPage from "./pages/QuestionsPage";
+import HealthPage from "./pages/HealthPage";
 
 const theme = createTheme({
   palette: {
@@ -21,6 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/questions" element={<QuestionsPage/>} />
+          <Route path="/health" element={<HealthPage/>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
