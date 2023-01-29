@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import QuestionsPage from "./pages/QuestionsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import HealthPage from "./pages/HealthPage";
+import HistoryPage from "./pages/HistoryPage";
+import AchivementsPage from "./pages/AchivementsPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -25,7 +27,17 @@ const MainRoutes = () => {
     {
       link: "/health",
       element: <HealthPage/>,
-      id: 3,
+      id: 4,
+    },
+    {
+      link: "/history",
+      element: <HistoryPage/>,
+      id: 5,
+    },
+    {
+      link: "/achivements",
+      element: <AchivementsPage/>,
+      id: 6,
     },
   ];
 

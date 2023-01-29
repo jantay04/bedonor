@@ -15,8 +15,7 @@ module.exports = {
       ourblue: "#2A5573",
       ourred: "#C53A3F",
     },
-    extend: {},
-    width: {
+    extend: { width: {
       vsm: "50vmax",
       logo: "9vmax",
       btn: "7vmax",
@@ -69,6 +68,7 @@ module.exports = {
         },
       },
     },
+  },
   },
   plugins: [],
 };

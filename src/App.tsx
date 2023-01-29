@@ -6,6 +6,8 @@ import NewsPage from "./pages/NewsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import QuestionsPage from "./pages/QuestionsPage";
 import HealthPage from "./pages/HealthPage";
+import HistoryPage from "./pages/HistoryPage";
+import AchivementsPage from "./pages/AchivementsPage";
 
 const theme = createTheme({
   palette: {
@@ -27,6 +29,8 @@ function App() {
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/questions" element={<QuestionsPage/>} />
           <Route path="/health" element={<HealthPage/>} />
+          <Route path="/history" element={<HistoryPage/>} />
+          <Route path="/achivements" element={<AchivementsPage/>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
