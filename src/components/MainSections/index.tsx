@@ -14,6 +14,7 @@ import progress5 from './assets/progress5.svg'
 import progress6 from './assets/progress6.svg'
 import progress7 from './assets/progress7.svg'
 import progress8 from './assets/progress8.svg'
+import stepSvg from './assets/stepSection.svg'
 
 type Props = {}
 
@@ -102,6 +103,21 @@ function MainSections({ }: Props) {
         },
     ]
 
+    const stepList = [
+        {
+            id: 1,
+            title: "Найди мед центр для сдачи крови"
+        },
+        {
+            id: 2,
+            title: "Проверься и сдай кровь"
+        },
+        {
+            id: 3,
+            title: "Забери свои призы и достижения"
+        },
+    ]
+
     return (
         <div className=' my-[200px]'>
             {/* Main section */}
@@ -147,6 +163,27 @@ function MainSections({ }: Props) {
                             <p className='text-[#2A5573] mt-3 font-bold'>{item.title}</p>
                         </div>
                     )}
+                </div>
+            </div>
+            {/* Progress section  */}
+
+            <div className='container mx-auto p-4 my-[120px]'>
+                <h2 className='text-center text-[#2A5573] text-2xl'>Получить приз очень легко, нужно сделать всего лишь  3 шага:</h2>
+                <div className='flex max-lg:flex-col  mt-[50px] lg:mt-[100px] items-center justify-center'>
+                    <div className=''>
+                        <img className='h-[400px]' src={stepSvg} alt='svg' />
+                    </div>
+                    <div className='grid gap-[70px] relative max-lg:mt-[20px]'>
+                        {stepList.map((item) =>
+                            <div className='flex items-center'>
+                                <div className='w-[42px] md:w-[64px] h-[42px] md:h-[64px] text-2xl border-[3px] bg-[#ffffff] border-[#AB3D51] text-[#2A5573] rounded-[100%] mr-[20px] flex items-center justify-center'>{item.id}</div>
+                                <div className='flex items-center'>
+                                    <p className='text-[#2A5573] md:text-xl'>{item.title}</p>
+                                </div>
+                            </div>
+                        )}
+                        <div className='w-[3px] h-[100%] bg-[#AB3D51] absolute top-0 left-[20px] md:left-[30px] -z-10' />
+                    </div>
                 </div>
             </div>
         </div>

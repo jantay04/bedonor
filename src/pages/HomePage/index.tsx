@@ -10,7 +10,6 @@ const HomePage = (props: Props) => {
     <>
      <MainLayout>
       <MainSections/>
-      <Map/>
     </MainLayout>
     </>
   );
