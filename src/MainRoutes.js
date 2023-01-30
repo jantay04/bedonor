@@ -4,8 +4,14 @@ import HomePage from "./pages/HomePage";
 import QuestionsPage from "./pages/QuestionsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import HealthPage from "./pages/HealthPage";
-import HistoryPage from "./pages/HistoryPage";
-import AchivementsPage from "./pages/AchivementsPage";
+import NewsPage from "./pages/NewsPage";
+import NewsOnePage from "./pages/NewsOnePage";
+import UserProfilePage from "./pages/UserProfilePage/Profile";
+import UserAchievementPage from "./pages/UserProfilePage/Achievement";
+import UserServicesPage from "./pages/UserProfilePage/Services";
+import UserHistoryPage from "./pages/UserProfilePage/History";
+import UserExitPage from "./pages/UserProfilePage/Exit";
+import UserSettingsPage from "./pages/UserProfilePage/Settings";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -30,14 +36,44 @@ const MainRoutes = () => {
       id: 4,
     },
     {
-      link: "/history",
-      element: <HistoryPage/>,
+      link: "/news",
+      element: <NewsPage/>,
+      id: 4,
+    },
+    {
+      link: "/newspage/:id",
+      element: <NewsOnePage/>,
       id: 5,
     },
     {
-      link: "/achivements",
-      element: <AchivementsPage/>,
+      link: "/profile",
+      element: <UserProfilePage/>,
       id: 6,
+    },
+    {
+      link: "/profile/achievement",
+      element: <UserAchievementPage/>,
+      id: 7,
+    },
+    {
+      link: "/profile/services",
+      element: <UserServicesPage/>,
+      id: 8,
+    },
+    {
+      link: "/profile/history",
+      element: <UserHistoryPage/>,
+      id: 9,
+    },
+    {
+      link: "/profile/settings",
+      element: <UserSettingsPage/>,
+      id: 10,
+    },
+    {
+      link: "/profile/exit",
+      element: <UserExitPage/>,
+      id: 10,
     },
   ];
 

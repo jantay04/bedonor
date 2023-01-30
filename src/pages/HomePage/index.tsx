@@ -8,10 +8,9 @@ type Props = {};
 const HomePage = (props: Props) => {
   return (
     <>
-     {/* <MainLayout> */}
+     <MainLayout>
       <MainSections/>
-      {/* <Map/> */}
-    {/* </MainLayout> */}
+    </MainLayout>
     </>
   );
 };

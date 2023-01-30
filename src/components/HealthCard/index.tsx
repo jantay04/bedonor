@@ -10,7 +10,7 @@ type Props = {
 function HealthCard({ id, title, credits, img }: Props) {
     return (
         <>
-            <div className='bg-[#D1E5F2] rounded-lg rounded-full object-cover'>
+            <div className='bg-[#D1E5F2] rounded-lg  object-cover'>
                 <div className=''>
                     <img src={img} alt='NewsImg' className=' w-[100%] h-[150px] object-cover ' />
                 </div>
