@@ -1,0 +1,31 @@
+.personalAreaLayout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 100px calc(100vh - 100px);
+    gap: 0px 0px;
+    grid-template-areas:
+        "Sidebar Header"
+        "Sidebar MainContent";
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px calc(100%);
+        grid-template-areas:
+            "Header"
+            "MainContent";
+    }
+}
+
+.sidebar {
+    grid-area: Sidebar;
+    position: fixed;
+    height: 100%;
+    background-color: aqua;
+}
+
+.header {
+    grid-area: Header;
+}
+
+.mainContent {
+    grid-area: MainContent;
+}
