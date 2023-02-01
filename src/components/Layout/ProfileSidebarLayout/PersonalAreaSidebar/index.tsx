@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logoSvg from '../../../assets/logowhite.svg'
 import settingsIcon from '../assets/settings.svg'
 import exitIcon from '../assets/exit.svg'
@@ -8,6 +8,7 @@ import servicesSvg from '../assets/services.svg'
 import personIcon from '../assets/person.svg'
 import reviewIcon from '../assets/review.svg'
 import { Link, useLocation } from 'react-router-dom'
+import { Button } from '@mui/material'
 type Props = {}
 
 type NavbarLinkProps = {
@@ -56,14 +57,12 @@ function PersonalAreaSidebar({ }: Props) {
             url: "settings",
             position: 'bottom'
         },
-        {
-            id: 6,
-            tittle: "Выйти",
-            icon: exitIcon,
-            url: "exit",
-            position: 'bottom'
-        },
     ]
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
 
     const router = useLocation()
 
@@ -82,6 +81,20 @@ function PersonalAreaSidebar({ }: Props) {
         )
     }
 
+    const ExitModal = () =>{
+        return(
+        <div className='w-screen h-screen left-0 top-0 z-10 fixed flex items-center justify-center bg-[#000000]/50'
+        onClick={handleClose}>
+            <div className='w-[475px] h-[300px] rounded-lg flex flex-col justify-center items-center bg-[#FFFFFF] text-[#2A5573] border-2 border-ourred'>
+                <h6 className='text-[24px] p-3 font-bold'>Уже уходите?</h6>
+                <p>А мы скучаем :(</p>
+            <Button variant="outlined" color="secondary" sx={{ textTransform: "none", marginTop: '36px', borderRadius: '16px', fontSize: '16px', fontWeight: '700', padding: '16px 40px' }}>Выйти</Button>
+            </div>
+        </div>
+        )
+    }
+    
+
     return (
         <div className="max-md:w-screen1/2 p-[20px] md:p-[40px] border-r flex flex-col bg-[#2A5573] text-[#ffffff]">
             <div className="pb-[50px] flex justify-center items-center">
@@ -93,14 +106,19 @@ function PersonalAreaSidebar({ }: Props) {
                 <div>
                     {sidebarLinks && sidebarLinks.filter(item => item.position == "top").map((item) => (
                         <NavbarLink tittle={item.tittle} icon={item.icon} url={item.url} />
-                    ))}
+                        ))}
                 </div>
                 <div>
                     {sidebarLinks && sidebarLinks.filter(item => item.position == "bottom").map((item) => (
-                        <NavbarLink tittle={item.tittle} icon={item.icon} url={item.url} />
-                    ))}
+                        <NavbarLink tittle={item.tittle} icon={item.icon} url={''}/>
+                        ))}
+                    <button className='flex items-center rounded py-[14px] px-[8px] w-[160px] gap-2 ease-in-out duration-150 hover:bg-[#D1E5F2] hover:text-[#2A5573]'
+                onClick={handleOpen}>
+                        <img src={exitIcon} alt=''/> Выйти
+                    </button>
                 </div>
             </div>
+            {open && <ExitModal/>} 
         </div>
     )
 }

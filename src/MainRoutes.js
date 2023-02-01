@@ -10,7 +10,6 @@ import UserProfilePage from "./pages/UserProfilePage/Profile";
 import UserAchievementPage from "./pages/UserProfilePage/Achievement";
 import UserServicesPage from "./pages/UserProfilePage/Services";
 import UserHistoryPage from "./pages/UserProfilePage/History";
-import UserExitPage from "./pages/UserProfilePage/Exit";
 import UserSettingsPage from "./pages/UserProfilePage/Settings";
 
 const MainRoutes = () => {
@@ -68,11 +67,6 @@ const MainRoutes = () => {
     {
       link: "/profile/settings",
       element: <UserSettingsPage/>,
-      id: 10,
-    },
-    {
-      link: "/profile/exit",
-      element: <UserExitPage/>,
       id: 10,
     },
   ];
