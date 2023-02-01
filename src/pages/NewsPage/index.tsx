@@ -7,9 +7,9 @@ import donor5 from './assets/donor5.jpg'
 import donor6 from './assets/donor6.jpg'
 import MainLayout from '../../components/Layout/MainLayout'
 import NewsCard from '../../components/NewsCard'
-import axios from 'axios'
 import Pagination from '@mui/material/Pagination/Pagination'
 import { apiUrl } from '../../api'
+import axios from 'axios'
 
 type Props = {}
 
@@ -93,6 +93,20 @@ function NewsPage({ }: Props) {
         });
 
     }, [setNewslists]);
+
+    // const [data, setData] = useState()
+    // useEffect(() => {
+    //     axios.get(apiUrl).then((resp) => {
+    //         const allPersons = resp.data.content;
+    //         const totalPages = resp.data.totalPages;
+    //         const allData = resp.data;
+    //         // setData(allData)
+    //         setTotalPages(totalPages)
+    //         setNewslists(allPersons);
+    //         console.log(data)
+    //     });
+
+    // }, [setNewslists]);
 
     return (
         <MainLayout>
