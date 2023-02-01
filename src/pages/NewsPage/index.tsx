@@ -9,6 +9,8 @@ import MainLayout from "../../components/Layout/MainLayout";
 import NewsCard from "../../components/NewsCard";
 import Pagination from "@mui/material/Pagination/Pagination";
 import axios from "axios";
+import { Breadcrumbs, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -103,6 +105,24 @@ function NewsPage({}: Props) {
   return (
     <MainLayout>
       <div className="container mx-auto p-4">
+        <div className="my-4">
+          <Breadcrumbs separator="›" aria-label="breadcrumb">
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="/">
+              <p className="text-ourblue font-medium text-2xl">Главная</p>
+            </Link>
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="">
+              <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-2xl">
+                Новости
+              </p>
+            </Link>
+          </Breadcrumbs>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {newsArray &&
             newsArray.map((item) => (
@@ -110,7 +130,7 @@ function NewsPage({}: Props) {
                 id={item.id}
                 title={item.title}
                 description={item.description}
-                dateOfCreate={item.dateOfCreate}
+                createdDate={item.dateOfCreate}
                 img={item.img}
               />
             ))}
