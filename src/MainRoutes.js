@@ -12,6 +12,7 @@ import UserServicesPage from "./pages/UserProfilePage/Services";
 import UserHistoryPage from "./pages/UserProfilePage/History";
 import UserExitPage from "./pages/UserProfilePage/Exit";
 import UserSettingsPage from "./pages/UserProfilePage/Settings";
+import LogAndRegPage from "./pages/LogAndRegPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -73,7 +74,12 @@ const MainRoutes = () => {
     {
       link: "/profile/exit",
       element: <UserExitPage/>,
-      id: 10,
+      id: 11,
+    },
+    {
+      link: "/auth",
+      element: <LogAndRegPage />,
+      id: 12,
     },
   ];
 

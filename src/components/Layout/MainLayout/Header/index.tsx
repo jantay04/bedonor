@@ -58,7 +58,7 @@ function Header({ }: Props) {
           </li>
         )}
         <li>
-          <Link to='/profile'>
+          <Link to='/auth'>
             <p className="flex justify-center items-center hover:bg-ourred hover:text-[#ffffff] transition-all  py-3 px-10 text-ourred font-semibold rounded-2xl   outline outline-offset-0 outline-ourred">Войти</p>
           </Link>
         </li>
