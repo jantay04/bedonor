@@ -13,10 +13,6 @@ import UserServicesPage from "./pages/UserProfilePage/Services";
 import UserHistoryPage from "./pages/UserProfilePage/History";
 import UserExitPage from "./pages/UserProfilePage/Exit";
 import UserSettingsPage from "./pages/UserProfilePage/Settings";
-import AdminPage from "./pages/AdminPage/index";
-import DonorPage from "./pages/AdminPage/navigations/DonorPage/index";
-import CoinsPage from "./pages/AdminPage/navigations/CoinsPage/index";
-import BloodPage from "./pages/AdminPage/navigations/BloodPage/index";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -75,33 +71,7 @@ const MainRoutes = () => {
     {
       link: "/profile/exit",
       element: <UserExitPage />,
-      id: 11,
-    },
-    {
-      link: "/auth",
-      element: <LogAndRegPage />,
-      id: 12,
-    },
-    {
-      link: "/questions",
-      element: <QuestionsPage />,
-      id: 13,
-    },
-    {
-      link: "/admin",
-      element: <AdminPage />,
-    },
-    {
-      link: "/donorsadmin",
-      element: <DonorPage />,
-    },
-    {
-      link: "/coinsadmin",
-      element: <CoinsPage />,
-    },
-    {
-      link: "/bloodadmin",
-      element: <BloodPage />,
+      id: 10,
     },
   ];
 

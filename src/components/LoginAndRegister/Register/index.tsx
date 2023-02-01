@@ -152,7 +152,7 @@ function Register({ setFormType }: Props) {
             id="mail"
             label="Введите почту"
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -160,7 +160,7 @@ function Register({ setFormType }: Props) {
             id="name"
             label="Введите имя"
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -168,7 +168,7 @@ function Register({ setFormType }: Props) {
             id="lastname"
             label="Введите фамилию"
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -206,7 +206,7 @@ function Register({ setFormType }: Props) {
             id="password"
             label="Введите пароль"
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
@@ -215,7 +215,7 @@ function Register({ setFormType }: Props) {
             id="password2"
             label="Повторите пароль"
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             type="password"
             onChange={(e) => setPasswordConfirm(e.target.value)}

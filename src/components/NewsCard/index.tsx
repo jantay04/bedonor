@@ -5,25 +5,25 @@ type Props = {
     id: number,
     title: string,
     description: string,
-    dateOfCreate: string,
+    createdDate: string,
     img: any
 }
 
-function NewsCard({ id, title, description, dateOfCreate, img }: Props) {
+function NewsCard({ id, title, description, createdDate, img }: Props) {
     return (
         <>
-            <div className='bg-[#EBEDEE] rounded-lg overflow-hidden w-[100%]'>
-                <Link to={`/newspage/${id}`}>
+            <Link to={`/`}>
+                <div className='bg-[#EBEDEE] rounded-lg overflow-hidden w-[100%]'>
                     <div className=''>
                         <img src={img} alt='NewsImg' className=' w-[100%] h-[200px] ' />
                     </div>
                     <div className='p-4 grid gap-2'>
-                        <p className='text-[#2A5573]/50'>{dateOfCreate}</p>
+                        <p className='text-[#2A5573]/50'>{createdDate ? createdDate.split("T")[0] : "Загрузка..."}</p>
                         <h3 className='text-[#2A5573] font-bold text-lg'>{title}</h3>
-                        <p className='text-[#2A5573]/50 truncate'>{description}</p>
+                        <p className='text-[#2A5573]/50 '>{description}</p>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </>
     )
 }

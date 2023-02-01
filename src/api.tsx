@@ -1,0 +1,1 @@
+export const apiUrl = 'http://donationapi-env.eba-ucpyqvmr.eu-central-1.elasticbeanstalk.com';

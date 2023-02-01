@@ -6,10 +6,8 @@ import authpic from "./assets/picauth.svg";
 
 type Props = {};
 
-function LoginAndRegister({}: Props) {
-  const [formType, setFormType] = useState<
-    "login" | "register" | "resetPassword"
-  >("login");
+function LoginAndRegister({ }: Props) {
+  const [formType, setFormType] = useState<"login" | "register" | "resetPassword">("login");
 
   return (
     <>

@@ -96,8 +96,7 @@ function Login({ setFormType }: Props) {
             </div>
             <div className="flex mx-auto flex-row justify-end text-xs cursor-default text-ourblue font-bold">
               Нет аккаунта?
-              <p
-                onClick={setFormRegister}
+              <p onClick={setFormRegister}
                 className="text-ourred cursor-pointer">
                 Зарегистрироваться
               </p>
