@@ -10,29 +10,27 @@ import { Link } from "react-router-dom";
 
 type Props = {};
 
-function Footer({ }: Props) {
-
-
+function Footer({}: Props) {
   const SocialMediaLinks = [
     {
       id: 1,
       title: "Telegram",
       url: "",
-      svg: TelegramSvg
+      svg: TelegramSvg,
     },
     {
       id: 2,
       title: "Instagram",
       url: "",
-      svg: InstagramSvg
+      svg: InstagramSvg,
     },
     {
       id: 3,
       title: "Vk",
       url: "",
-      svg: VkSvg
+      svg: VkSvg,
     },
-  ]
+  ];
 
   return (
     <div className="bg-[#D1E5F2] text-footerBlueText pt-[55px] pb-[32px]">
@@ -43,15 +41,16 @@ function Footer({ }: Props) {
               <img src={BeDonorSvg} />
             </Link>
             <div className="flex gap-5 mt-5">
-              {SocialMediaLinks && SocialMediaLinks.map((link) =>
-                <>
-                  <Link to={link.url}>
-                    <img src={link.svg} alt={link.title} />
-                  </Link>
-                </>
-              )}
+              {SocialMediaLinks &&
+                SocialMediaLinks.map((link) => (
+                  <>
+                    <Link to={link.url}>
+                      <img src={link.svg} alt={link.title} />
+                    </Link>
+                  </>
+                ))}
             </div>
-            <p className="mt-10" >© 2022 BeDonor</p>
+            <p className="mt-10">© 2022 BeDonor</p>
           </div>
           <div>
             {/*----- Вместо p потом Link будет -----*/}

@@ -2,6 +2,7 @@ import React from "react";
 import MainRoutes from "./MainRoutes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AuthContextProvider from "./context/AuthContextProvider";
 
 const theme = createTheme({
   palette: {
@@ -20,9 +21,11 @@ function App() {
   //Map пока как комонент идет , потом в main добавил, это для удобста:)
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <MainRoutes />
-      </div>
+      <AuthContextProvider>
+        <div className="App">
+          <MainRoutes />
+        </div>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
