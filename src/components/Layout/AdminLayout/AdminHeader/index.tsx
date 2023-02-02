@@ -12,22 +12,22 @@ const AdminLayout = ({ children }: Props) => {
     {
       id: 1,
       tittle: "Доноры",
-      path: "/",
+      path: "/admin",
     },
     {
       id: 2,
       tittle: "Коины",
-      path: "/",
+      path: "/admin/coins",
     },
     {
       id: 3,
       tittle: "Сдача крови",
-      path: "/",
+      path: "/admin/blood",
     },
     {
       id: 4,
       tittle: "Редактирование",
-      path: "/",
+      path: "/admin",
     },
   ]
 

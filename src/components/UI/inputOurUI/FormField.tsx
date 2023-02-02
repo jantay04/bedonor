@@ -10,6 +10,8 @@ type Props = {
   standard?: boolean;
   large?: boolean;
   type?: "password" | "date";
+  value?: any;
+  onChange?: any;
 };
 
 // const CssTextField = styled(TextField)({

@@ -4,6 +4,9 @@ import picture from "../QuestionsPage/assets/picture.svg";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { IconButton } from "@mui/material";
+import minus from "./assets/minus.svg";
+import { Link } from "react-router-dom";
+import { Breadcrumbs } from "@mui/material";
 
 type Props = {};
 
@@ -56,6 +59,25 @@ const QuestionsPage = (props: Props) => {
   return (
     <MainLayout>
       <div className="container mx-auto p-4">
+        <div className="my-4">
+          <Breadcrumbs separator="›" aria-label="breadcrumb">
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="/">
+              <p className="text-ourblue font-medium text-2xl">Главная</p>
+            </Link>
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="">
+              <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-2xl">
+                FAQ
+              </p>
+            </Link>
+          </Breadcrumbs>
+        </div>
+
         <h3 className="text-[34px] max-sm:text-[20px] font-bold text-[#2A5573]">
           ВОПРОСЫ
         </h3>
@@ -66,10 +88,10 @@ const QuestionsPage = (props: Props) => {
           <div className="col-span-7 max-lg:col-span-12 flex flex-col gap-4">
             {QuestionsList &&
               QuestionsList.map((item) => <QuestionElement id={item.id} title={item.title} description={item.description} />)}
+
           </div>
         </div>
       </div>
-
     </MainLayout>
   );
 };

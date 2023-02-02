@@ -3,17 +3,35 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginFormSchema } from "../../../helpers/validations";
 import * as yup from "yup";
 import CssTextField from "../../UI/inputOurUI/FormField";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ModalHeading from "../ModalHeading";
-import TextField from "@mui/material/TextField/TextField";
+import TextField from "@mui/material/TextField";
 import Button, { ButtonProps } from "@mui/material/Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContextProvider";
 
 type Props = {
   setFormType: any;
 };
 
 function Login({ setFormType }: Props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
+  useEffect(() => {
+    console.log(username);
+  }, [username]);
+
+  function loginUser() {
+    let formData = new FormData();
+    formData.append("username", username);
+    formData.append("password", password);
+    login(formData, navigate, username);
+  }
+
+  //! Validation
   function setFormRegister() {
     setFormType("register");
   }
@@ -39,10 +57,21 @@ function Login({ setFormType }: Props) {
               <div className="mb-6">
                 <ModalHeading>Вход</ModalHeading>
               </div>
-              <CssTextField label="Введите почту" name="email" />
-              <CssTextField
+              <TextField
+                label="Почта"
+                id="outlined-size-small"
+                defaultValue=""
+                size="small"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <TextField
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 label="Введите пароль"
-                name="password"
+                id="outlined-size-small"
+                defaultValue=""
+                size="small"
                 type="password"
               />
               <div className="flex justify-end mb-6">
@@ -59,6 +88,7 @@ function Login({ setFormType }: Props) {
                   color="secondary"
                   variant="contained"
                   size="large"
+                  onClick={loginUser}
                   sx={{ textTransform: "capitalize", borderRadius: 2 }}>
                   Войти
                 </Button>

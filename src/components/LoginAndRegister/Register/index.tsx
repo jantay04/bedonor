@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAuth } from "../../../context/AuthContextProvider";
+import ModalHeading from "../ModalHeading";
+import TextField from "@mui/material/TextField/TextField";
+import Button, { ButtonProps } from "@mui/material/Button/Button";
+import { styled } from "@mui/system";
+import { MenuItem } from "@mui/material";
+import { useNavigate } from "react-router";
 import {
   Formik,
   FormikHelpers,
@@ -7,11 +14,6 @@ import {
   Field,
   FieldProps,
 } from "formik";
-import ModalHeading from "../ModalHeading";
-import TextField from "@mui/material/TextField/TextField";
-import Button, { ButtonProps } from "@mui/material/Button/Button";
-import { styled } from "@mui/system";
-import { MenuItem } from "@mui/material";
 
 type Props = {
   setFormType: any;
@@ -89,6 +91,43 @@ const gender = [
   },
 ];
 function Register({ setFormType }: Props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [blood, setBlood] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [genderid, setGender] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+
+  const { register } = useAuth();
+  useEffect(() => {
+    console.log(blood);
+  }, [blood]);
+
+  const navigate = useNavigate();
+
+  function createUser() {
+    if (
+      !email ||
+      !password ||
+      !passwordConfirm ||
+      !username ||
+      !blood ||
+      !lastName ||
+      !genderid
+    ) {
+      alert("You have empty inputs!");
+      return;
+    }
+
+    let formData = new FormData();
+    formData.append("username", username);
+    formData.append("password", password);
+    formData.append("password_confirm", passwordConfirm);
+    formData.append("email", email);
+    register(formData, navigate("/"));
+  }
+
   const initialValues: MyFormValues = {
     login: "",
     password: "",
@@ -102,12 +141,12 @@ function Register({ setFormType }: Props) {
     <div className="w-[320px] pb-[50px]">
       <ModalHeading>Регистрация</ModalHeading>
       <Formik
-        initialValues={initialValues}
         onSubmit={(values, actions) => {
           // console.log({ values, actions });
           // alert(JSON.stringify(values, null, 2));
           // actions.setSubmitting(false);
-        }}>
+        }}
+        initialValues={initialValues}>
         <Form className="flex gap-[14px] flex-col mt-5">
           <TextField
             id="mail"
@@ -115,20 +154,23 @@ function Register({ setFormType }: Props) {
             variant="outlined"
             color="secondary"
             size="small"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
-            id="mail"
+            id="name"
             label="Введите имя"
             variant="outlined"
             color="secondary"
             size="small"
+            onChange={(e) => setUsername(e.target.value)}
           />
           <TextField
-            id="mail"
-            label="Введите фамилия"
+            id="lastname"
+            label="Введите фамилию"
             variant="outlined"
             color="secondary"
             size="small"
+            onChange={(e) => setLastName(e.target.value)}
           />
           <TextField
             id="outlined-select-currency"
@@ -137,7 +179,10 @@ function Register({ setFormType }: Props) {
             defaultValue=""
             size="small">
             {bloodType.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
+              <MenuItem
+                key={option.value}
+                value={option.value}
+                onClick={(e) => setBlood(option.value)}>
                 {option.label}
               </MenuItem>
             ))}
@@ -149,7 +194,10 @@ function Register({ setFormType }: Props) {
             defaultValue=""
             size="small">
             {gender.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
+              <MenuItem
+                key={option.value}
+                value={option.value}
+                onClick={(e) => setGender(option.value)}>
                 {option.label}
               </MenuItem>
             ))}
@@ -161,6 +209,7 @@ function Register({ setFormType }: Props) {
             color="secondary"
             size="small"
             type="password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <TextField
             id="password2"
@@ -169,6 +218,7 @@ function Register({ setFormType }: Props) {
             color="secondary"
             size="small"
             type="password"
+            onChange={(e) => setPasswordConfirm(e.target.value)}
           />
           <Button
             type="submit"
@@ -178,7 +228,8 @@ function Register({ setFormType }: Props) {
               textTransform: "capitalize",
               borderRadius: 2,
               height: "50px",
-            }}>
+            }}
+            onClick={createUser}>
             <p className="font-semibold text-base">Зарегистрироваться</p>
           </Button>
 

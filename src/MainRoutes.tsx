@@ -4,17 +4,20 @@ import HomePage from "./pages/HomePage";
 import QuestionsPage from "./pages/QuestionsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import HealthPage from "./pages/HealthPage";
-import NewsPage from "./pages/NewsPage";
 import NewsOnePage from "./pages/NewsOnePage";
-import UserProfilePage from "./pages/UserProfilePages/Profile";
-import UserAchievementPage from "./pages/UserProfilePages/Achievement";
-import UserServicesPage from "./pages/UserProfilePages/Services";
-import UserHistoryPage from "./pages/UserProfilePages/History";
-import UserExitPage from "./pages/UserProfilePages/Exit";
-import UserSettingsPage from "./pages/UserProfilePages/Settings";
 import LogAndRegPage from "./pages/LogAndRegPage";
 import AdminPanelDonorPage from "./pages/AdminPanelPages/Donor";
 import AdminCoinsDonorPage from "./pages/AdminPanelPages/Coins";
+import WhereLocation from "./pages/WhereLocation";
+import Achivments from "./pages/Achivments";
+import UserExitPage from "./pages/UserProfilePages/Exit";
+import UserSettingsPage from "./pages/UserProfilePages/Settings";
+import UserHistoryPage from "./pages/UserProfilePages/History";
+import UserServicesPage from "./pages/UserProfilePages/Services";
+import UserAchievementPage from "./pages/UserProfilePages/Achievement";
+import UserProfilePage from "./pages/UserProfilePages/Profile";
+import NewsPage from "./pages/NewsPage";
+import AdminBloodPage from "./pages/AdminPanelPages/Blood";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -23,75 +26,97 @@ const MainRoutes = () => {
       element: <HomePage />,
       id: 1,
     },
+
     {
       link: "/aboutus",
       element: <AboutUsPage />,
       id: 2,
     },
+
     {
-      link: "/questions",
-      element: <QuestionsPage />,
+      link: "/health",
+      element: <HealthPage />,
       id: 3,
     },
     {
-      link: "/health",
-      element: <HealthPage/>,
+      element: <HealthPage />,
       id: 4,
     },
     {
       link: "/news",
-      element: <NewsPage/>,
-      id: 4,
-    },
-    {
-      link: "/newspage/:id",
-      element: <NewsOnePage/>,
+      element: <NewsPage />,
       id: 5,
     },
     {
-      link: "/profile",
-      element: <UserProfilePage/>,
+      link: "/newspage/:id",
+      element: <NewsOnePage />,
       id: 6,
     },
     {
-      link: "/profile/achievement",
-      element: <UserAchievementPage/>,
+      link: "/profile",
+      element: <UserProfilePage />,
       id: 7,
     },
     {
-      link: "/profile/services",
-      element: <UserServicesPage/>,
+      link: "/profile/achievement",
+      element: <UserAchievementPage />,
       id: 8,
     },
     {
-      link: "/profile/history",
-      element: <UserHistoryPage/>,
+      link: "/profile/services",
+      element: <UserServicesPage />,
       id: 9,
     },
     {
-      link: "/profile/settings",
-      element: <UserSettingsPage/>,
+      link: "/profile/history",
+      element: <UserHistoryPage />,
       id: 10,
     },
     {
-      link: "/profile/exit",
-      element: <UserExitPage/>,
+      link: "/profile/settings",
+      element: <UserSettingsPage />,
       id: 11,
+    },
+    {
+      link: "/profile/exit",
+      element: <UserExitPage />,
+      id: 12,
     },
     {
       link: "/auth",
       element: <LogAndRegPage />,
-      id: 12,
+      id: 13,
     },
     {
       link: "/admin",
       element: <AdminPanelDonorPage />,
-      id: 13,
+      id: 14,
     },
     {
       link: "/admin/coins",
-      element: <AdminCoinsDonorPage/>,
-      id: 14,
+      element: <AdminCoinsDonorPage />,
+      id: 15,
+
+    },
+    {
+      link: "/admin/blood",
+      element: <AdminBloodPage />,
+      id: 20
+    },
+    {
+      link: "/questions",
+      element: <QuestionsPage />,
+      id: 16,
+    },
+    {
+      link: "/location",
+      element: <WhereLocation />,
+      id: 21
+    },
+    {
+      link: "/achive",
+      element: <Achivments />,
+      id: 22
     },
   ];
 

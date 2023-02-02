@@ -64,20 +64,32 @@ function AdminPanelDonorPage({ }: Props) {
                 <div className='grid gap-4'>
                     <div className='grid grid-cols-3 gap-4'>
                         <div className='bg-[#D1E5F2] p-4 rounded-lg'>
-                            <PieChart chartData={SexData} />
+                            <div className='relative'>
+                                <h2 className=' text-xl text-[#2A5573]'>Статистика мужчин и женщин</h2>
+                                <div className='absolute -left-4 top-[6px] h-4 w-1 bg-[#2A5573]' />
+                            </div>
+                            <div className='mt-4'>
+                                <PieChart chartData={SexData} />
+                            </div>
                         </div>
                         <div className='col-span-2 bg-[#D1E5F2] p-4 rounded-lg'>
+                            <div className='relative'>
+                                <h2 className=' text-xl text-[#2A5573]'>Статистика типов крови</h2>
+                                <div className='absolute -left-4 top-[6px] h-4 w-1 bg-[#2A5573]' />
+                            </div>
+                            <div className='mt-4'>
                             <BarChart chartData={BloodyData} />
+                            </div>
                         </div>
                     </div>
                     <div>
-                        <AdminCalendar/>
+                        <AdminCalendar />
                     </div>
                     <div className='grid grid-cols-2'>
                         <AdminSearch />
                     </div>
                     <div>
-                        <AdminTable/>
+                        <AdminTable />
                     </div>
                 </div>
             </div>
