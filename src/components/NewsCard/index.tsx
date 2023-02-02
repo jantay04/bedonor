@@ -12,7 +12,7 @@ type Props = {
 function NewsCard({ id, title, description, createdDate, img }: Props) {
     return (
         <>
-            <Link to={`/`}>
+            <Link to={`/newspage/${id}`}>
                 <div className='bg-[#EBEDEE] rounded-lg overflow-hidden w-[100%]'>
                     <div className=''>
                         <img src={img} alt='NewsImg' className=' w-[100%] h-[200px] ' />

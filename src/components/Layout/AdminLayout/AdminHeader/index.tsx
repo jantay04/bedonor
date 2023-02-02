@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 type Props = {
   children: React.ReactNode;
 };
-const AdminHeader = ({ children }: Props) => {
+const AdminLayout = ({ children }: Props) => {
 
   const adminTools = [
     {
@@ -50,4 +50,4 @@ const AdminHeader = ({ children }: Props) => {
   );
 };
 
-export default AdminHeader;
+export default AdminLayout;
