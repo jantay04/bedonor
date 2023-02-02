@@ -43,17 +43,31 @@ module.exports = {
           xl: "5rem",
           "2xl": "6rem",
         },
+
+        container: {
+          padding: {
+            DEFAULT: "1240px",
+            sm: "2rem",
+            lg: "4rem",
+            xl: "5rem",
+            "2xl": "6rem",
+          },
+          lineHeight: {
+            "44px": "44px",
+          },
+          letterSpacing: {
+            "0.15px": "0.15px",
+          },
+          borderColor: {
+            borderColor: "rgba(42, 85, 115, 0.5)",
+          },
+        },
+        colors: {
+          ourblue: "#2A5573",
+          ourred: "#C53A3F",
+        },
       },
-      lineHeight: {
-        "44px": "44px",
-      },
-      letterSpacing: {
-        "0.15px": "0.15px",
-      },
-      borderColor: {
-        borderColor: "rgba(42, 85, 115, 0.5)",
-      },
+      plugins: [],
     },
   },
-  plugins: [],
 };
