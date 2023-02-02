@@ -6,14 +6,16 @@ import Button, { ButtonProps } from "@mui/material/Button/Button";
 import { Link } from "react-router-dom";
 import mailSvg from "./assets/mail.svg";
 import { styled } from "@mui/system";
+import { useAppDispatch } from "../../../Hooks/Hook";
+import { ResetPassAync } from "../../../SlicesRT/UserSlice";
 
 type Props = {
   setFormType: any;
 };
 
 interface MyFormValues {
-  login: string;
-  password: string;
+  email: string;
+  // password: string;
 }
 
 const CssTextField = styled(TextField)({
@@ -38,8 +40,7 @@ const CssTextField = styled(TextField)({
 
 function ResetPassword({ setFormType }: Props) {
   const initialValues: MyFormValues = {
-    login: "",
-    password: "",
+    email: "omurkulovaidin94@gmail.com",
   };
 
   function setFormRegister() {
@@ -66,6 +67,8 @@ function ResetPassword({ setFormType }: Props) {
     }
   }, [counter]);
 
+  const dispatch = useAppDispatch();
+
   return (
     <div className="w-[320px] pb-[150px]">
       <ModalHeading>
@@ -80,9 +83,7 @@ function ResetPassword({ setFormType }: Props) {
           <Formik
             initialValues={initialValues}
             onSubmit={(values, actions) => {
-              // console.log({ values, actions });
-              // alert(JSON.stringify(values, null, 2));
-              // actions.setSubmitting(false);
+              dispatch(ResetPassAync(values));
               setConfirmation(true);
             }}>
             <Form className="flex gap-[20px] flex-col mt-11">

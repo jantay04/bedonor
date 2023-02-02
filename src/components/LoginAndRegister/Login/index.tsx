@@ -1,19 +1,23 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginFormSchema } from "../../../helpers/validations";
-import * as yup from "yup";
 import CssTextField from "../../UI/inputOurUI/FormField";
-import React from "react";
 import ModalHeading from "../ModalHeading";
-import TextField from "@mui/material/TextField/TextField";
 import Button, { ButtonProps } from "@mui/material/Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useAppDispatch } from "../../../Hooks/Hook";
+import { LoginUserAsync } from "../../../SlicesRT/UserSlice";
 
 type Props = {
   setFormType: any;
 };
 
 function Login({ setFormType }: Props) {
+  const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
+
   function setFormRegister() {
     setFormType("register");
   }
@@ -27,7 +31,13 @@ function Login({ setFormType }: Props) {
     resolver: yupResolver(LoginFormSchema),
   });
   const onSubmit = () => {
-    console.log("kkk");
+    const objLogin = {
+      email: form.getValues().email,
+      password: form.getValues().password,
+    };
+    dispatch(LoginUserAsync(objLogin));
+    console.log(objLogin);
+    navigate("/profile");
   };
 
   return (
@@ -52,17 +62,17 @@ function Login({ setFormType }: Props) {
                   Забыли пароль?
                 </p>
               </div>
-              <Link to="/profile" className="w-full">
-                <Button
-                  type="submit"
-                  fullWidth
-                  color="secondary"
-                  variant="contained"
-                  size="large"
-                  sx={{ textTransform: "capitalize", borderRadius: 2 }}>
-                  Войти
-                </Button>
-              </Link>
+              {/* <Link to="/profile" className="w-full"> */}
+              <Button
+                type="submit"
+                fullWidth
+                color="secondary"
+                variant="contained"
+                size="large"
+                sx={{ textTransform: "capitalize", borderRadius: 2 }}>
+                Войти
+              </Button>
+              {/* </Link> */}
             </div>
             <div className="flex mx-auto flex-row justify-end text-xs cursor-default text-ourblue font-bold">
               Нет аккаунта?

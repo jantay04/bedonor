@@ -1,11 +1,23 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import ProfileSidebarLayout from "../../../components/Layout/ProfileSidebarLayout";
 import { TextField } from "@mui/material";
 
 //Assets
 import ProfilePhoto from "./Assets/Ellipse 1.png";
+import { useAppSelecctor } from "../../../Hooks/Hook";
+import { IUserInfo } from "../../../Types/Type";
 
 const UserProfilePage: FC = () => {
+  // const user: IUserInfo = useAppSelecctor(state => state.user.userInfo);
+
+  const [userInfo, setUserInfo] = useState<IUserInfo>(
+    JSON.parse(localStorage.getItem("userInfo") || "{}")
+  );
+
+  useEffect(() => {
+    // setUserInfo(user);
+  }, []);
+
   return (
     <ProfileSidebarLayout>
       {/* <div className=" justify-start w-full"></div> */}
@@ -19,7 +31,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Имя"
-              // defaultValue={name ? name : "Не указано"}
+              defaultValue={
+                userInfo?.firstName ? userInfo.firstName : "Не указано"
+              }
               InputProps={{
                 readOnly: true,
               }}
@@ -28,7 +42,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Группа крови"
-              // defaultValue={bloodGroup ? bloodGroup : "Не указано"}
+              // defaultValue={
+              //   userInfo?. ? userInfo. : "Не указано"
+              // }
               InputProps={{
                 readOnly: true,
               }}
@@ -37,7 +53,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Дата рождения"
-              // defaultValue={dateOfBirth ? dateOfBirth : "Не указано"}
+              // defaultValue={
+              //   userInfo?. ? userInfo. : "Не указано"
+              // }
               InputProps={{
                 readOnly: true,
               }}
@@ -46,7 +64,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Номер телефона"
-              // defaultValue={phone ? phone : "Не указано"}
+              // defaultValue={
+              //   userInfo?. ? userInfo. : "Не указано"
+              // }
               InputProps={{
                 readOnly: true,
               }}
@@ -57,7 +77,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Фамилия"
-              // defaultValue={surname ? surname : "Не указано"}
+              defaultValue={
+                userInfo?.lastName ? userInfo?.lastName : "Не указано"
+              }
               InputProps={{
                 readOnly: true,
               }}
@@ -66,7 +88,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Пол"
-              // defaultValue={sex ? sex : "Не указано"}
+              // defaultValue={
+              //   userInfo?.firstName ? userInfo.firstName : "Не указано"
+              // }
               InputProps={{
                 readOnly: true,
               }}
@@ -75,7 +99,9 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Регион"
-              // defaultValue={region ? region : "Не указано"}
+              // defaultValue={
+              //   userInfo?.firstName ? userInfo.firstName : "Не указано"
+              // }
               InputProps={{
                 readOnly: true,
               }}
@@ -84,7 +110,7 @@ const UserProfilePage: FC = () => {
               className="w-56"
               id="outlined-read-only-input"
               label="Почта"
-              // defaultValue={email ? email : "Не указано"}
+              defaultValue={userInfo?.email ? userInfo?.email : "Не указано"}
               InputProps={{
                 readOnly: true,
               }}
@@ -92,11 +118,15 @@ const UserProfilePage: FC = () => {
           </div>
           <div className="w-56  bg-ourBlue rounded-lg flex flex-col items-center justify-center">
             <div className="mb-10">
-              <img src={ProfilePhoto} />
+              <img
+                src={userInfo.avatarUrl ? userInfo.avatarUrl : ProfilePhoto}
+                className="w-28 h-28 rounded-3xl"
+              />
             </div>
             <div className="flex flex-col items-center">
-              <p className="font-ourFont text-footerBlueText font-bold text-2xl leading-7">
-                Марат Азатов
+              <p className="font-ourFont text-footerBlueText font-bold text-l leading-7">
+                {userInfo.lastName ? userInfo.lastName : "Не указано"}
+                {userInfo.firstName ? userInfo.firstName : "Не указано"}
               </p>
               <p className="font-ourFont text-footerBlueText text-base leading-6 font-bold">
                 600

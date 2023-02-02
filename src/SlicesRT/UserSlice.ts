@@ -28,13 +28,34 @@ export const LoginUserAsync = createAsyncThunk(
   "user/LoginUserAsync",
   async (user: IUserLogin, { dispatch }) => {
     try {
-      let res = await axios.post<IUserInfo>(`${API}/auth/login`);
+      let res = await axios.post<IUserInfo>(`${API}/auth/login`, user);
       dispatch(setLoginUser(res.data));
     } catch (err) {
       console.log(err);
     }
   }
 );
+export const ResetPassAync = createAsyncThunk(
+  "user/ResetPassAync",
+  async (email: object, { dispatch }) => {
+    try {
+      await axios.post<IUserInfo>(`${API}/auth/reset`, email);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
+// export const GetTotalUserInfo = createAsyncThunk(
+//   "user/ResetPassAcync",
+//   async () => {
+//     try {
+//       let res = await axios(`${API}`)
+//     } catch (err) {
+//       console.log(errs);
+//     }
+//   }
+// );
 
 export const UserSlice = createSlice({
   name: "user",
@@ -42,6 +63,7 @@ export const UserSlice = createSlice({
   reducers: {
     setLoginUser: (state, action: PayloadAction<IUserInfo>) => {
       state.userInfo = action.payload;
+      localStorage.setItem("userInfo", JSON.stringify(state.userInfo));
     },
   },
 });
