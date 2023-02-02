@@ -3,7 +3,7 @@ import React from "react";
 //!SVG IMPORTS
 import BeDonorSvg from "./assets/Be DonorBeDonor.svg";
 import TelegramSvg from "./assets/VectorTelega.svg";
-import InstagramSvg from "./assets/instagram.svg";
+import InstagramSvg from "./assets/insta.svg";
 import VkSvg from "./assets/LogoVk.svg";
 // import InfoSvg from "./assets/Info.svg";
 import { Link } from "react-router-dom";
