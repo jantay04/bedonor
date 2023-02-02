@@ -3,22 +3,44 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      backgroundColor: {
-        ourBlue: " #D1E5F2",
+      container: {
+        padding: {
+          DEFAULT: "1240px",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
       },
       colors: {
+        ourblue: "#2A5573",
+        ourred: "#C53A3F",
+        ourredanim: "#CA3338",
         footerBlueText: "#2A5573",
         mapRed: "#AB3D51",
-      },
-      height: {
-        footerHeight: "300px",
-        mapHeight: "528px",
+        mapblue: "#D1E5F2",
+        inputblue: "#2A5573 20%",
       },
       width: {
-        mapWidth: "796px",
+        vsm: "50vmax",
+        logo: "9vmax",
+        btn: "7vmax",
+      },
+      height: {
+        btn: "3vmax",
+        footerHeight: "300px",
+      },
+      outlineWidth: {
+        16: "16px",
+      },
+      borderRadius: {
+        btn: "14px",
       },
       fontFamily: {
         ourFont: " 'Manrope'",
+      },
+      backgroundColor: {
+        ourBlue: " #D1E5F2",
       },
       transitionDelay: {
         tr: "1s",
@@ -35,39 +57,14 @@ module.exports = {
         RedrightSpacing: "300px",
         RedRightSpacingMain: "1135px",
       },
-      container: {
-        padding: {
-          DEFAULT: "1240px",
-          sm: "2rem",
-          lg: "4rem",
-          xl: "5rem",
-          "2xl": "6rem",
-        },
-
-        container: {
-          padding: {
-            DEFAULT: "1240px",
-            sm: "2rem",
-            lg: "4rem",
-            xl: "5rem",
-            "2xl": "6rem",
+      keyframes: {
+        bounce: {
+          "0%, 100%": {
+            transform: "translateY(-1%)",
+            transtion: "3s",
           },
-          lineHeight: {
-            "44px": "44px",
-          },
-          letterSpacing: {
-            "0.15px": "0.15px",
-          },
-          borderColor: {
-            borderColor: "rgba(42, 85, 115, 0.5)",
-          },
-        },
-        colors: {
-          ourblue: "#2A5573",
-          ourred: "#C53A3F",
         },
       },
-      plugins: [],
     },
   },
 };

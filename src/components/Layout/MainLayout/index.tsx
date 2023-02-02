@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./Header/index";
 import Footer from "./Footer";
-// import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import AdminHeader from "../AdminLayout/AdminHeader";
 
 type Props = {
   children: React.ReactNode;

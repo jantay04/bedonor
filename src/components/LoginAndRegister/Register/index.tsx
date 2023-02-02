@@ -92,6 +92,8 @@ const gender = [
   },
 ];
 
+
+
 function Register({ setFormType }: Props) {
   const initialValues: IUserRegister = {
     bloodTypeId: 3,
@@ -101,8 +103,6 @@ function Register({ setFormType }: Props) {
     name: "test/name",
     password: "1234567",
   };
-
-  // console.log(form);
 
   function setFormLogin() {
     setFormType("login");
@@ -117,6 +117,7 @@ function Register({ setFormType }: Props) {
         initialValues={initialValues}
         onSubmit={(values, actions) => {
           dispatch(RegisterUserAsync(values));
+          console.log(values);
           // alert(JSON.stringify(values, null, 2));
           // actions.setSubmitting(false);
         }}>

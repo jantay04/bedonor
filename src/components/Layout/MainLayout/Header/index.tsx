@@ -17,12 +17,12 @@ function Header({}: Props) {
     {
       id: 2,
       tittle: "Достижения",
-      url: "/",
+      url: "/achive",
     },
     {
       id: 3,
       tittle: "Где сдать кровь?",
-      url: "/",
+      url: "/location",
     },
     {
       id: 4,

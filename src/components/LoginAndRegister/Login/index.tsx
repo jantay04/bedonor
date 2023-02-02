@@ -40,7 +40,7 @@ function Login({ setFormType }: Props) {
     navigate("/profile");
   };
 
-  return (
+  return ( 
     <div className="md:w-[320px] md:h-[440px]">
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

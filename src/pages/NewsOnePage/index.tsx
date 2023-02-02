@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
-import MainLayout from "../../components/Layout/MainLayout";
-import DonorImg from "./assets/donor1.jpg";
-import NewsCard from "../../components/NewsCard";
-import TelegramSvg from "./assets/telegram.svg";
-import VkSvg from "./assets/vk.svg";
-import InstagramSvg from "./assets/instagram.svg";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { apiUrl } from "../../api";
+import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
+import MainLayout from '../../components/Layout/MainLayout'
+import DonorImg from './assets/donor1.jpg'
+import NewsCard from '../../components/NewsCard'
+import TelegramSvg from './assets/telegram.svg'
+import VkSvg from './assets/vk.svg'
+import InstagramSvg from './assets/instagram.svg'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import { apiUrl } from '../../api'
 
 type Props = {};
 
@@ -43,7 +43,8 @@ function NewsOnePage({}: Props) {
   const [data, setData] = useState();
 
   useEffect(() => {
-    axios.get(`${apiUrl}/news`).then(resp => {
+
+    axios.get(`${apiUrl}/news`).then((resp) => {
       const totalNews = resp.data.totalElements;
       const allData = resp.data;
       setData(allData);
@@ -64,29 +65,20 @@ function NewsOnePage({}: Props) {
 
   return (
     <MainLayout>
-      <div className=" container mx-auto p-4">
+      <div className=' container mx-auto p-4' >
         <h2 onClick={() => console.log()}>Читать новости</h2>
-        <div className="grid grid-cols-12 gap-5">
-          <div className="col-span-12 sm:col-span-7">
-            <p className="text-[#9d9d9d] mt-12">
-              {news ? news.createdDate.split("T")[0] : "Загрузка..."}
-            </p>
-            <h1 className="text-[#AB3D51] text-2xl sm:text-4xl font-bold mt-8">
-              {news ? news.title : "Загрузка..."}
-            </h1>
-            <p className=" mt-5 text-[#2A5573] leading-7 text-base">
-              {news ? news.text : "Загрузка..."}
-            </p>
-            <div className="mt-[64px]">
-              <p className="text-[#2A5573]">
-                Источник новости и фото: Национальный фонд развития
-                здравоохранения КР
-              </p>
-              <div className="flex gap-16 mt-3">
-                <p className="text-[#2A5573]">Поделиться:</p>
-                <div className="flex items-center gap-4 ">
-                  <a href="#">
-                    <img className=" w-[32px]" src={TelegramSvg} alt="icon" />
+        <div className='grid grid-cols-12 gap-5'>
+          <div className='col-span-12 sm:col-span-7'>
+            <p className='text-[#9d9d9d] mt-12'>{news ? news.createdDate.split("T")[0] : "Загрузка..."}</p>
+            <h1 className='text-[#AB3D51] text-2xl sm:text-4xl font-bold mt-8'>{news ? news.title : "Загрузка..."}</h1>
+            <p className=' mt-5 text-[#2A5573] leading-7 text-base'>{news ? news.text : "Загрузка..."}</p>
+            <div className='mt-[64px]'>
+              <p className='text-[#2A5573]'>Источник новости и фото: Национальный фонд развития здравоохранения КР</p>
+              <div className='flex gap-16 mt-3'>
+                <p className='text-[#2A5573]'>Поделиться:</p>
+                <div className='flex items-center gap-4 '>
+                  <a href="#" >
+                    <img className=' w-[32px]' src={TelegramSvg} alt='icon' />
                   </a>
                   <a href="#">
                     <img className=" w-[32px]" src={VkSvg} alt="icon" />

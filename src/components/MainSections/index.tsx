@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button/Button";
-// import Checkbox from '@mui/material/Checkbox/Checkbox'
+import Checkbox from "@mui/material/Checkbox/Checkbox";
 import React from "react";
 import pic1 from "./assets/pic1.svg";
 import icon1 from "./assets/icon1.svg";
@@ -215,10 +215,6 @@ function MainSections({}: Props) {
             <div className="w-[3px] h-[100%] bg-[#AB3D51] absolute top-0 left-[20px] md:left-[30px] -z-10" />
           </div>
         </div>
-      </div>
-
-      <div className="container mx-auto p-4 my-[120px]">
-        <BaseMap />
       </div>
     </div>
   );

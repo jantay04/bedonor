@@ -1,9 +1,9 @@
 import React from "react";
-// import MainLayout from "./components/Layout/MainLayout";
-// import Footer from "./components/Layout/MainLayout/Footer";
-// import BaseMap from "./components/Layout/MainLayout/Map/BaseMap";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import MainRoutes from "./MainRoutes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AuthContextProvider from "./context/AuthContextProvider";
 
 const theme = createTheme({
   palette: {
@@ -22,7 +22,11 @@ function App() {
   //Map пока как комонент идет , потом в main добавил, это для удобста:)
   return (
     <ThemeProvider theme={theme}>
-      <MainRoutes />
+      <AuthContextProvider>
+        <div className="App">
+          <MainRoutes />
+        </div>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }

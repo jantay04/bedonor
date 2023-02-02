@@ -1,5 +1,4 @@
 import React from "react";
-
 //!SVG IMPORTS
 import BeDonorSvg from "./assets/Be DonorBeDonor.svg";
 import TelegramSvg from "./assets/VectorTelega.svg";
@@ -7,6 +6,7 @@ import InstagramSvg from "./assets/Instagram.svg";
 import VkSvg from "./assets/LogoVk.svg";
 // import InfoSvg from "./assets/Info.svg";
 import { Link } from "react-router-dom";
+import instaSVG from "./assets/inst.svg";
 
 type Props = {};
 
@@ -22,7 +22,7 @@ function Footer({}: Props) {
       id: 2,
       title: "Instagram",
       url: "",
-      svg: InstagramSvg,
+      svg: instaSVG,
     },
     {
       id: 3,
