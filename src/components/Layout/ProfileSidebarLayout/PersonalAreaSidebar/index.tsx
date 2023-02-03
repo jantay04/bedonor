@@ -30,7 +30,7 @@ function PersonalAreaSidebar({ }: Props) {
         },
         {
             id: 2,
-            tittle: "Достижение",
+            tittle: "Достижения",
             icon: achievementSvg,
             url: "achievement",
             position: 'top'
