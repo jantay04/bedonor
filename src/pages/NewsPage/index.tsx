@@ -137,13 +137,13 @@ function NewsPage({}: Props) {
               className="hover:underline underline-offset-1"
               color="inherit"
               to="/">
-              <p className="text-ourblue font-medium text-2xl">Главная</p>
+              <p className="text-ourblue font-medium text-m">Главная</p>
             </Link>
             <Link
               className="hover:underline underline-offset-1"
               color="inherit"
               to="">
-              <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-2xl">
+              <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-m">
                 Новости
               </p>
             </Link>

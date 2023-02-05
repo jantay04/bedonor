@@ -66,13 +66,13 @@ const Achivments = (props: Props) => {
               className="hover:underline underline-offset-1"
               color="inherit"
               to="/">
-              <p className="text-ourblue font-medium text-2xl">Главная</p>
+              <p className="text-ourblue font-medium text-m">Главная</p>
             </Link>
             <Link
               className="hover:underline underline-offset-1"
               color="inherit"
               to="">
-              <p className="text-[rgba(42, 85, 115, 0.5)] font-medium text-2xl">
+              <p className="text-[rgba(42, 85, 115, 0.5)] font-medium text-m">
                 Достижения
               </p>
             </Link>
@@ -91,9 +91,10 @@ const Achivments = (props: Props) => {
             </p>
           </div>
         </div>
+      </div>
         {/* Progress section  */}
-        <div className="bg-[#D1E5F2]  my-[120px]">
-          <div className="container mx-auto p-4 grid min-[320px]:grid-cols-2 min-[460px]:grid-cols-3 sm:grid-cols-4 py-[60px] gap-y-[60px]">
+        <div className="bg-[#D1E5F2]  my-[120px] w-screen">
+          <div className="container mx-auto p-4 grid min-[320px]:grid-cols-2 min-[460px]:grid-cols-3 sm:grid-cols-4 gap-y-[60px]">
             {progresses &&
               progresses.map((item) => (
                 <div className="flex flex-col items-center">
@@ -106,7 +107,6 @@ const Achivments = (props: Props) => {
           </div>
         </div>
         {/* Progress section  */}
-      </div>
     </MainLayout>
   );
 };

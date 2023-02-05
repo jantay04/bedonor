@@ -138,7 +138,7 @@ function Register({ setFormType }: Props) {
   }
 
   return (
-    <div className="w-[320px] pb-[50px]">
+    <div className="w-[320px] max-md:w-[250px] max-sm:w-[180px] pb-[50px]">
       <ModalHeading>Регистрация</ModalHeading>
       <Formik
         onSubmit={(values, actions) => {

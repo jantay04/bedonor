@@ -11,21 +11,21 @@ function LoginAndRegister({ }: Props) {
 
   return (
     <>
-      <div className="container mx-auto flex flex-row justify-evenly p-0 mt-12">
+      <div className="container mx-auto flex flex-row justify-evenly p-0 mt-12 max-md:flex-col">
         <img src={authpic} alt="" />
         <div className="flex items-center justify-center ">
           {formType == "login" && (
-            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 ">
+            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 mb-10">
               <Login setFormType={setFormType} />
             </div>
           )}
           {formType == "register" && (
-            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 ">
+            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 mb-10">
               <Register setFormType={setFormType} />
             </div>
           )}
           {formType == "resetPassword" && (
-            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 ">
+            <div className="outline outline-2 outline-offset-0 outline-ourred rounded-2xl p-14 pb-10 mb-10">
               <ResetPassword setFormType={setFormType} />
             </div>
           )}

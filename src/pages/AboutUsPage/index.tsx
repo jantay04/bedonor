@@ -13,22 +13,22 @@ const AboutUs = (props: Props) => {
       <div className="container mx-auto p-4 grid grid-cols-12 gap-[20px] max-sm:gap-[10px] text-[#2A5573]">
         <div className="col-span-7 max-lg:col-span-12">
           <div className="my-4">
-            <Breadcrumbs separator="›" aria-label="breadcrumb">
-              <Link
-                className="hover:underline underline-offset-1"
-                color="inherit"
-                to="/">
-                <p className="text-ourblue font-medium text-2xl">Главная</p>
-              </Link>
-              <Link
-                className="hover:underline underline-offset-1"
-                color="inherit"
-                to="">
-                <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-2xl">
-                  О нас
-                </p>
-              </Link>
-            </Breadcrumbs>
+          <Breadcrumbs separator="›" aria-label="breadcrumb">
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="/">
+              <p className="text-ourblue font-medium text-m">Главная</p>
+            </Link>
+            <Link
+              className="hover:underline underline-offset-1"
+              color="inherit"
+              to="">
+              <p className="stext-[rgba(42, 85, 115, 0.5)] font-medium text-m">
+                FAQ
+              </p>
+            </Link>
+          </Breadcrumbs>
           </div>
           <h3 className="text-[34px] font-bold mb-8">О НАС</h3>
           <div className="flex flex-col space-y-4">
