@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileSidebarLayout from '../../../components/Layout/ProfileSidebarLayout'
+import ProfileSidebarLayout from '../../../components/Layout/ProfileLayout'
 import first from './assets/1.svg'
 import second from './assets/2.svg'
 import third from './assets/3.svg'
@@ -76,7 +76,7 @@ function UserServicesPage({ }: Props) {
     return (
         <ProfileSidebarLayout>
             <h4 className='py-6 text-[#2A5573]'>Приобретите мед услуги на ваши баллы</h4>
-            <div className='grid grid-cols-2 lg:grid-cols-3 gap-5'>
+            <div className='grid  min-[400px]:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {newsArray && newsArray.map((item) =>
                     <ServicesCard id={item.id} title={item.title} credits={item.credits} img={item.img} />
                 )}

@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 import { Avatar, Drawer } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonalAreaSidebar from '../PersonalAreaSidebar';
+import CoinsSvg from '../assets/coins.svg'
 
 type Props = {}
 
@@ -63,7 +64,7 @@ function PersonalAreaHeader({ }: Props) {
                     <PersonalAreaSidebar />
                 </Drawer>
             </div>
-            <div className='flex items-center gap-2'>
+            <div className='w-full'>
                 {/* <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
@@ -73,17 +74,21 @@ function PersonalAreaHeader({ }: Props) {
                         <NotificationsNoneIcon />
                     </Badge>
                 </IconButton> */}
-                <div className='flex items-center gap-3'>
+                <div className='flex max-sm:flex-row-reverse max-sm:justify-start items-center gap-3'>
                     <StyledBadge
                         overlap="circular"
                         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                    // variant="dot"
                     >
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                        <Avatar alt="Remy Sharp" src="" />
                     </StyledBadge>
-                    <p>Приветствуем, Марат!</p>
-
-                    <p>600 баллов</p>
+                    <div className='grid max-sm:grid-rows-2 grid-flow-col items-center text-[#2A5573]'>
+                        <p>{"Марат Азатов"}</p>
+                        <div className='flex items-center'>
+                            <img src={CoinsSvg} className='h-4 w-4 sm:ml-8 mr-3' alt='Coins Icon' />
+                            <p>600 баллов</p>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>

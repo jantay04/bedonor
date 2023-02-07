@@ -90,7 +90,7 @@ function ResetPassword({ setFormType }: Props) {
                 id="mail"
                 label="Введите почту"
                 variant="outlined"
-                color="primary"
+                color="secondary"
                 size="small"
               />
               <Button

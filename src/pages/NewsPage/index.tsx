@@ -11,6 +11,7 @@ import Pagination from "@mui/material/Pagination/Pagination";
 import axios from "axios";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../../api";
 
 type Props = {};
 
@@ -78,56 +79,55 @@ export const newsArray = [
   },
 ];
 
-function NewsPage({}: Props) {
+function NewsPage({ }: Props) {
   const [newskLists, setNewslists] = useState<News[] | null>();
 
   const [totalPages, setTotalPages] = useState<number | 1>();
 
   // const apiUrl = "https://jsonplaceholder.typicode.com/photos"
 
-  const apiUrl =
-    "http://donationapi-env.eba-ucpyqvmr.eu-central-1.elasticbeanstalk.com/news";
-
+  // const apiUrl =
+  //   "http://donationapi-env.eba-ucpyqvmr.eu-central-1.elasticbeanstalk.com/news";
   const [data, setData] = useState();
 
+  // useEffect(() => {
+  //   axios.get(apiUrl).then((resp) => {
+  //     const allPersons = resp.data.content;
+  //     const totalPages = resp.data.totalPages;
+  //     const allData = resp.data;
+  //     // setData(allData)
+  //     setTotalPages(totalPages);
+  //     setNewslists(allPersons);
+  //     console.log(data);
+  //   });
+  // }, [setNewslists]);
+
   useEffect(() => {
-    axios.get(apiUrl).then((resp) => {
+    axios.get(`${apiUrl}/news`).then((resp) => {
       const allPersons = resp.data.content;
       const totalPages = resp.data.totalPages;
       const allData = resp.data;
-      // setData(allData)
-      setTotalPages(totalPages);
+      setData(allData)
+      setTotalPages(totalPages)
       setNewslists(allPersons);
-      console.log(data);
+      console.log(allData)
     });
+
   }, [setNewslists]);
 
-    useEffect(() => {
-        axios.get(`${apiUrl}/news`).then((resp) => {
-            const allPersons = resp.data.content;
-            const totalPages = resp.data.totalPages;
-            const allData = resp.data;
-            setData(allData)
-            setTotalPages(totalPages)
-            setNewslists(allPersons);
-            console.log(allData)
-        });
+  // const [data, setData] = useState()
+  // useEffect(() => {
+  //     axios.get(apiUrl).then((resp) => {
+  //         const allPersons = resp.data.content;
+  //         const totalPages = resp.data.totalPages;
+  //         const allData = resp.data;
+  //         // setData(allData)
+  //         setTotalPages(totalPages)
+  //         setNewslists(allPersons);
+  //         console.log(data)
+  //     });
 
-    }, [setNewslists]);
-
-    // const [data, setData] = useState()
-    // useEffect(() => {
-    //     axios.get(apiUrl).then((resp) => {
-    //         const allPersons = resp.data.content;
-    //         const totalPages = resp.data.totalPages;
-    //         const allData = resp.data;
-    //         // setData(allData)
-    //         setTotalPages(totalPages)
-    //         setNewslists(allPersons);
-    //         console.log(data)
-    //     });
-
-    // }, [setNewslists]);
+  // }, [setNewslists]);
   return (
     <MainLayout>
       <div className="container mx-auto p-4">

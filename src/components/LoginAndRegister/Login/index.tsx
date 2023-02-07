@@ -57,23 +57,27 @@ function Login({ setFormType }: Props) {
               <div className="mb-6">
                 <ModalHeading>Вход</ModalHeading>
               </div>
-              <TextField
-                label="Почта"
-                id="outlined-size-small"
-                defaultValue=""
-                size="small"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <TextField
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                label="Введите пароль"
-                id="outlined-size-small"
-                defaultValue=""
-                size="small"
-                type="password"
-              />
+              <div className="grid gap-4">
+                <TextField
+                  label="Почта"
+                  id="outlined-size-small"
+                  defaultValue=""
+                  size="small"
+                  color="secondary"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <TextField
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  label="Введите пароль"
+                  id="outlined-size-small"
+                  defaultValue=""
+                  size="small"
+                  color="secondary"
+                  type="password"
+                />
+              </div>
               <div className="flex justify-end mb-6">
                 <p
                   onClick={setFormResetPassword}

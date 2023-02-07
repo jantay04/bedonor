@@ -83,7 +83,7 @@ function PersonalAreaSidebar({ }: Props) {
     }
 
     return (
-        <div className="max-md:w-screen1/2 p-[20px] md:p-[40px] border-r flex flex-col bg-[#2A5573] text-[#ffffff]">
+        <div className="max-md:w-screen1/2 h-screen p-[20px] md:p-[40px] border-r flex flex-col  text-[#ffffff] bg-[#2A5573]">
             <div className="pb-[50px] flex justify-center items-center">
                 <Link to={'/'}>
                     <img src={logoSvg} alt="logo" className="h-[18px]" />

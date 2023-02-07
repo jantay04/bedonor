@@ -82,6 +82,7 @@ const AdminBloodPage = (props: Props) => {
             <TextField
               id="outlined-basic"
               label={item.title}
+              color="secondary"
               variant="outlined"
             />
           ))}

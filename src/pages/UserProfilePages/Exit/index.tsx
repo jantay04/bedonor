@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileSidebarLayout from '../../../components/Layout/ProfileSidebarLayout'
+import ProfileSidebarLayout from '../../../components/Layout/ProfileLayout'
 
 type Props = {}
 

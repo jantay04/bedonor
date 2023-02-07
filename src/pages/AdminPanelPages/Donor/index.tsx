@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminLayout from '../../../components/Layout/AdminLayout/AdminHeader'
 import PieChart from '../../../components/Charts/PieChart'
 import { Tooltip, Title, ArcElement, Legend } from 'chart.js'
@@ -6,31 +6,18 @@ import { BarChart } from '../../../components/Charts/BarChart'
 import AdminSearch from '../../../components/AdminSearch'
 import AdminTable from '../../../components/AdminTable'
 import AdminCalendar from '../../../components/AdminCalendar'
+import axios from 'axios'
+import { apiUrl } from '../../../api'
 
 type Props = {}
 
-
+export type gender = {
+    id?: number;
+    gender: string;
+    percent: number;
+};
 
 function AdminPanelDonorPage({ }: Props) {
-
-    const SexData = {
-        labels: ['Женщин - 40%', 'Мужчин - 60%',],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [40, 60],
-                backgroundColor: [
-                    '#C53FB7',
-                    '#3A7EE3',
-                ],
-                borderColor: [
-                    'white',
-                    'white',
-                ],
-                borderWidth: 1,
-            },
-        ],
-    };
 
     const BloodyData = {
         labels: ['О (I) Rh+ ', 'A (I) Rh+', 'B (I) Rh+', 'AB (I) Rh+', 'О (I) Rh-', 'A (I) Rh-', 'B (I) Rh-', 'AB (I) Rh-'],
@@ -58,9 +45,43 @@ function AdminPanelDonorPage({ }: Props) {
             borderWidth: 1
         }]
     };
+
+    const [genderData, setGenderData] = useState<{} | null>();
+
+    let genCount: Array<number> = []
+    let genTypes: Array<string> = []
+
+    axios.get(`${apiUrl}/statistics/gender`).then((resp) => {
+
+         for(const dataObj of resp.data) {
+            genCount.push(dataObj.percent)
+            genTypes.push(dataObj.gender + ` - ${dataObj.percent}%`)
+        }
+
+        setGenderData({
+                labels: genTypes,
+                datasets: [
+                    {
+                        label: '# of Votes',
+                        data: genCount,
+                        backgroundColor: [
+                            '#3A7EE3',
+                            '#C53FB7',
+                        ],
+                        borderColor: [
+                            '#3A7EE3',
+                            'C53FB7',
+                        ],
+                        borderWidth: 1,
+                    },
+                ],
+            }
+        )
+    }); 
+   
     return (
         <AdminLayout>
-            <div className='container mx-auto p-4'>
+            <div className='container mx-auto p-4' onClick={() => console.log(genderData)}>
                 <div className='grid gap-4'>
                     <div className='grid grid-cols-3 gap-4'>
                         <div className='bg-[#D1E5F2] p-4 rounded-lg'>
@@ -69,7 +90,8 @@ function AdminPanelDonorPage({ }: Props) {
                                 <div className='absolute -left-4 top-[6px] h-4 w-1 bg-[#2A5573]' />
                             </div>
                             <div className='mt-4'>
-                                <PieChart chartData={SexData} />
+                                {genderData && <PieChart chartData={genderData} />}
+                                
                             </div>
                         </div>
                         <div className='col-span-2 bg-[#D1E5F2] p-4 rounded-lg'>
@@ -78,7 +100,7 @@ function AdminPanelDonorPage({ }: Props) {
                                 <div className='absolute -left-4 top-[6px] h-4 w-1 bg-[#2A5573]' />
                             </div>
                             <div className='mt-4'>
-                            <BarChart chartData={BloodyData} />
+                                <BarChart chartData={BloodyData} />
                             </div>
                         </div>
                     </div>

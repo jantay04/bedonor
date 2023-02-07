@@ -176,13 +176,16 @@ function Register({ setFormType }: Props) {
             id="outlined-select-currency"
             select
             label="Выберите свою гуппу крови"
+            color="secondary"
             defaultValue=""
             size="small">
             {bloodType.map((option) => (
               <MenuItem
                 key={option.value}
                 value={option.value}
-                onClick={(e) => setBlood(option.value)}>
+                onClick={(e) => setBlood(option.value)}
+                sx={{background: "white"}}
+                >
                 {option.label}
               </MenuItem>
             ))}
@@ -192,6 +195,7 @@ function Register({ setFormType }: Props) {
             select
             label="Укажите пол"
             defaultValue=""
+            color="secondary"
             size="small">
             {gender.map((option) => (
               <MenuItem

@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileSidebarLayout from '../../../components/Layout/ProfileSidebarLayout'
+import ProfileSidebarLayout from '../../../components/Layout/ProfileLayout'
 import { Button } from '@mui/material'
 
 type Props = {}
@@ -39,7 +39,7 @@ function UserHistoryPage({ }: Props) {
     <ProfileSidebarLayout>
       <div className=" max-sm:flex-col justify-center items-center text-[#2A5573]">
         <h5 className="m-3 text-[25px]">Ваша история</h5>
-        <div>
+        <div className='overflow-x-scroll'>
           <div className="grid grid-cols-4 text-center text-[#2A5573] max-md:text-[12px] max-sm:text-[10px]">
             <p className="bg-[#D1E5F2] rounded-lg p-3 mx-3">Дата</p>
             <p className="bg-[#D1E5F2] rounded-lg p-3 mx-3">Место</p>

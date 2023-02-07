@@ -13,7 +13,7 @@ function ProfileSidebarLayout({ children }: Props) {
         <div className={` ${style.personalAreaLayout} `}>
             <div className={`${style.sidebar}  `}>
                 <div className='max-md:hidden '>
-                    <div className='fixed flex h-screen '>
+                    <div className='fixed flex h-screen  '>
                         <PersonalAreaSidebar />
                     </div>
                 </div>
